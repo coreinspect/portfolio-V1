@@ -1,0 +1,246 @@
+/* =============== HOME CONTAINER =============== */
+.home-container {
+  position: relative;
+  height: 100vh;
+}
+
+/* =============== HOME CONTENT =============== */
+.home-content {
+  display: grid;
+  grid-template-columns: 116px 1fr;
+  align-items: center;
+}
+/* =============== HOME SOCIAL =============== */
+.home-social {
+  display: grid;
+  grid-template-columns: max-content;
+  row-gap: 1rem;
+}
+
+.home-social-icon {
+  font-size: 1.5rem;
+  margin: 0 10px;
+  position: relative;
+
+  color: var(--title-color);
+}
+
+.home-social-icon:hover {
+  color: var(--title-color-dark);
+}
+/* =============== HOME HI =============== */
+
+.home-hi {
+  font-size: 2rem;
+}
+
+.span-hi {
+  color: #028391;
+  font-size: 2rem;
+}
+.wave {
+  padding-left: 2rem;
+}
+
+/* =============== HOME TITLE =============== */
+.home-title {
+  position: relative;
+  font-size: 4.5rem;
+  margin-bottom: var(--mb-0-25);
+  color: var(--body-color);
+  -webkit-text-stroke: 0.1rem var(--title-color);
+}
+
+.home-title::before {
+  content: attr(data-text);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 100%;
+  color: #028391;
+  -webkit-text-stroke: 0rem #fffc;
+  overflow: hidden;
+  white-space: nowrap;
+  animation: animate 6s linear infinite;
+}
+
+@keyframes animate {
+  0%,
+  10%,
+  100% {
+    width: 0;
+    -webkit-text-stroke: 0.1rem #028391;
+  }
+  70%,
+  90% {
+    width: 100%;
+    -webkit-text-stroke: 0.1rem #028391;
+  }
+}
+.home-hand {
+  width: 39px;
+  height: 39px;
+  margin-left: 0.4rem;
+}
+
+/* ============== HOME SUBTITLE =============== */
+.home-subtitle {
+  position: relative;
+  font-size: var(--h3-font-size);
+  padding: 0 6.4rem;
+  font-weight: var(--font-normal);
+  margin-bottom: var(--mb-1);
+}
+
+.home-subtitle::before {
+  content: "";
+  position: absolute;
+  width: 80px;
+  height: 2px;
+  background-color: var(--text-color);
+  left: 0;
+  top: 1rem;
+}
+
+/* =============== HOME DESCRIPTION =============== */
+.home-description {
+  max-width: 700px;
+  margin-bottom: var(--mb-3);
+}
+
+/* ============== BUTTON CONTACT =============== */
+
+.button-contact {
+  display: inline-block;
+  animation: button-contact 2s infinite;
+  margin-left: 0.1rem;
+}
+
+@keyframes button-contact {
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(
+      8px
+    ); /* Adjust the value for desired movement distance */
+  }
+}
+
+/* =============== HOME SCROLL =============== */
+.home-scroll {
+  font-size: 2.5rem;
+  position: absolute;
+  bottom: 1.5rem;
+  left: 50%;
+}
+
+.wheel {
+  animation: scroll 2s ease infinite;
+}
+
+@keyframes scroll {
+  0% {
+    transform: translateY(0);
+  }
+  30% {
+    transform: translateY(3.5rem);
+  }
+}
+
+/*=============== BREAKPOINTS ===============*/
+/* For large devices */
+@media screen and (max-width: 992px) {
+  .container {
+    margin-left: var(--mb-2-5);
+    margin-right: var(--mb-2-5);
+  }
+
+  .home-title {
+    font-size: 3.5rem;
+  }
+}
+
+/* For medium devices */
+@media screen and (max-width: 768px) {
+  .container {
+    margin-left: var(--mb-2);
+    margin-right: var(--mb-2);
+  }
+  .home-title {
+    font-size: 2.5rem;
+  }
+
+  .home-scroll {
+    bottom: 3rem;
+  }
+  body {
+    margin: 0 0 0 0;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .button {
+    padding: 0.8rem 1.3rem;
+    font-size: var(--small-font-size);
+  }
+  .home-title {
+    font-size: 2rem; /* Adjust the font size for smaller screens */
+  }
+
+  .home-content {
+    grid-template-columns: 50px 1fr;
+  }
+
+  .home-hi,
+  .span-hi {
+    font-size: 1.5rem;
+  }
+
+  .home-hand {
+    width: 20px;
+    height: 20px;
+  }
+
+  .home-description {
+    font-size: var(--small-font-size);
+  }
+}
+@media screen and (max-width: 439px) {
+  .home-content {
+    grid-template-rows: 2fr 1fr;
+    grid-template-columns: 1fr;
+  }
+  .container {
+    margin-left: var(--mb-1);
+    margin-right: var(--mb-1);
+  }
+
+  .home-data {
+    align-self: flex-end;
+  }
+
+  .home-title {
+    font-size: 2rem;
+  }
+
+  .home-social {
+    order: 1;
+    display: flex;
+    justify-content: center;
+    align-items: self-start;
+    height: 100%;
+  }
+}
+/* For small devices */
+@media screen and (max-width: 350px) {
+  .home-title {
+    font-size: 1.5rem;
+  }
+  .container {
+    margin-left: var(--mb-1);
+    margin-right: var(--mb-1);
+  }
+}
