@@ -5,8 +5,10 @@ import Records from "./Record";
 const About = () => {
   return (
     <section className="about section " id="about">
-      <h2 className="section-title">About Me</h2>
-      <span className="section-subtitle">My Introduction</span>
+      <div className="container-section-title">
+        <h2 className="section-title">About Me</h2>
+        <h3 className="section-subtitle">Get to know me </h3>
+      </div>
 
       <div className="about-container container grid">
         <div className="about-text-img">
