@@ -38,21 +38,26 @@ const Records = () => {
   }, []);
 
   useEffect(() => {
-    const handleScroll = () => {
-      if (!hasStarted && isElementInViewport(sectionRef.current)) {
-        startCounting();
-        setHasStarted(true);
-      }
+    const handleIntersect = (entries, observer) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting && !hasStarted) {
+          startCounting();
+          setHasStarted(true);
+          observer.unobserve(sectionRef.current);
+        }
+      });
     };
 
-    window.addEventListener("scroll", handleScroll);
-    window.addEventListener("resize", handleScroll);
+    const observer = new IntersectionObserver(handleIntersect, {
+      root: null,
+      rootMargin: "0px",
+      threshold: 0.1, // Adjust as needed
+    });
 
-    handleScroll(); // Check if the element is in view on component mount
+    observer.observe(sectionRef.current);
 
     return () => {
-      window.removeEventListener("scroll", handleScroll);
-      window.removeEventListener("resize", handleScroll);
+      observer.disconnect();
     };
   }, [hasStarted, startCounting]);
 
