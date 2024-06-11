@@ -39,7 +39,42 @@
   font-size: 2rem;
 }
 .wave {
-  padding-left: 2rem;
+  padding-left: 1rem;
+}
+
+.waving-container {
+  position: relative;
+  display: inline-flex;
+  width: 45px;
+  height: 45px;
+}
+.home-hand {
+  width: 100%;
+  height: 39px;
+}
+
+.home-hand path {
+  padding: 0 2rem;
+  animation: wave 2s infinite;
+  transform-origin: bottom center;
+}
+
+@keyframes wave {
+  0% {
+    transform: rotate(0deg);
+  }
+  25% {
+    transform: rotate(10deg);
+  }
+  50% {
+    transform: rotate(0deg);
+  }
+  75% {
+    transform: rotate(-10deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
 }
 
 /* =============== HOME TITLE =============== */
@@ -77,11 +112,6 @@
     width: 100%;
     -webkit-text-stroke: 0.1rem #028391;
   }
-}
-.home-hand {
-  width: 39px;
-  height: 39px;
-  margin-left: 0.4rem;
 }
 
 /* ============== HOME SUBTITLE =============== */
@@ -123,9 +153,7 @@
     transform: translateX(0);
   }
   50% {
-    transform: translateX(
-      8px
-    ); /* Adjust the value for desired movement distance */
+    transform: translateX(8px);
   }
 }
 
@@ -133,7 +161,7 @@
 .home-scroll {
   font-size: 2.5rem;
   position: absolute;
-  bottom: 1.5rem;
+  bottom: 5rem;
   left: 50%;
 }
 
