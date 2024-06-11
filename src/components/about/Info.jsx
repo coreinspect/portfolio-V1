@@ -6,7 +6,7 @@ function Info() {
           <h3 className="about-title">
             <i className="bx bx-briefcase-alt about-icon"></i>Experience
           </h3>
-          <span className="about-subtitle">2 Year Working and counting</span>
+          <span className="about-subtitle">2 Years Working and Counting</span>
         </div>
 
         <div className="about-box">
