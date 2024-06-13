@@ -5,7 +5,7 @@ const Data = () => {
         <span className="span-hi">&lt;</span>Hi
         <span className="span-hi">&gt;</span>
         <span className="waving-container">
-          {" "}
+          
           <svg
             width="36"
             height="36"
